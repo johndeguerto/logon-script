@@ -2,7 +2,7 @@
 
 ts=$(date +"%m-%d-%Y %T %Z")
 u="$USER"
-log_file="/var/log/t3logs.log"
+log_file="t3logs.log"
 rip=$(who --ips am i | awk '{print $5}')
 echo .
 echo "Logged in as: $u"
@@ -14,7 +14,7 @@ log(){
 }
 
 
-trap "echo No no.." SIGINT SIGTERM
+trap "echo No no..." SIGINT SIGTERM
 yn=""
 while [ "$yn" == "" ]; do
         read -p "Enter Zendesk #" zd
